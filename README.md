@@ -1,6 +1,6 @@
 # Daily Headers
 
-Google DeepMind の Gemini 3.1 Flash Image (Nano Banana 2) を活用して、日替わりのヘッダー画像を自動生成し、資産として管理するプロジェクトです。
+Google DeepMind の Gemini 3.1 Flash Image (Nano Banana 2) を活用して、日替わりのヘッダー画像を自動生成し、アセットとして管理するプロジェクトです。
 
 ## 概要
 
@@ -37,7 +37,7 @@ uv run python generate_daily.py <MM-DD> "<Theme>" "<Description>"
 
 生成される画像は 4:1 のアスペクト比で、パステルカラーのソフトなトーンに最適化されています。
 
-### 2. 資産一覧 (README) の更新
+### 2. アセット一覧 (README) の更新
 
 `/assets` ディレクトリ内の画像と説明文をスキャンし、月ごとに整理された一覧を `/assets/README.md` に生成・更新します。
 
@@ -45,13 +45,13 @@ uv run python generate_daily.py <MM-DD> "<Theme>" "<Description>"
 uv run python update_assets_readme.py
 ```
 
-## 生成された資産について
+## 生成されたアセットについて
 
 本プロジェクトで生成された画像の一覧は、[assets/README.md](assets/README.md) で確認できます。
 
 ## Assets and AI-Generated Content
 
-本リポジトリに含まれる一部の画像資産（`/assets` ディレクトリ内など）は、Google の Gemini Nano Banana を使用して生成されています。
+本リポジトリに含まれる一部の画像アセット（`/assets` ディレクトリ内など）は、Google の Gemini Nano Banana を使用して生成されています。
 これらの画像は、プロジェクトの視覚的補助を目的としています。
 
 AI 生成物の著作権および利用条件については、[Google Generative AI Additional Terms of Service](https://ai.google.dev/gemini-api/terms) に準拠します。

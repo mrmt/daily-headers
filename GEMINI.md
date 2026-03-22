@@ -1,6 +1,6 @@
 # Gemini CLI Project Skills: daily-headers
 
-本プロジェクトでは、Google DeepMind の Gemini 3.1 Flash Image (Nano Banana 2) を活用して、日替わりのヘッダー画像を自動生成し、資産として管理します。
+本プロジェクトでは、Google DeepMind の Gemini 3.1 Flash Image (Nano Banana 2) を活用して、日替わりのヘッダー画像を自動生成し、アセットとして管理します。
 
 ## 1. 日替わりヘッダーの生成 (Generate Daily Header)
 
@@ -23,7 +23,7 @@ uv run python generate_daily.py <MM-DD> "<Theme>" "<Description>"
 
 ---
 
-## 2. 資産一覧の更新 (Update Assets README)
+## 2. アセット一覧の更新 (Update Assets README)
 
 `/assets/` ディレクトリ内の画像と説明文をスキャンし、月ごとに整理された `README.md` を生成・更新します。
 
