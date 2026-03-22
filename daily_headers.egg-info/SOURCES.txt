@@ -1,0 +1,10 @@
+LICENSE
+LICENSE-ASSETS
+README.md
+pyproject.toml
+daily_headers.egg-info/PKG-INFO
+daily_headers.egg-info/SOURCES.txt
+daily_headers.egg-info/dependency_links.txt
+daily_headers.egg-info/entry_points.txt
+daily_headers.egg-info/requires.txt
+daily_headers.egg-info/top_level.txt

@@ -1,0 +1,14 @@
+[project]
+name = "daily-headers"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11.3"
+dependencies = [
+    "google-genai>=1.68.0",
+    "python-dotenv>=1.2.2",
+]
+
+[project.scripts]
+generate-daily = "generate_daily:main"
+update-assets-readme = "update_assets_readme:update_assets_readme"
