@@ -1,0 +1,13 @@
+Notice Regarding AI-Generated Content
+=====================================
+Some visual assets included in this repository were generated using Gemini Nano Banana by Google.
+Applicability: While the source code is licensed under the MIT License, AI-generated assets are provided subject to the Google Generative AI Additional Terms of Service <https://ai.google.dev/gemini-api/terms>.
+No Warranty: These assets are provided "as is" without any warranty of any kind, including but not limited to the warranties of non-infringement of third-party rights.
+User Responsibility: Users who reuse, modify, or redistribute these AI-generated assets do so at their own risk and are responsible for complying with applicable laws and the AI provider's terms.
+
+AI生成コンテンツに関する免責事項
+==========================
+本ソフトウェアに含まれる画像等の生成AI出力物（以下「AIコンテンツ」）については、以下の通り取り扱うものとします。
+ライセンスの適用範囲: 本ソフトウェアのソースコードには MIT License が適用されますが、AIコンテンツについては、生成AIプラットフォーム（Gemini）の利用規約 <https://ai.google.dev/gemini-api/terms> に基づき提供されます。
+非保証: AIコンテンツは「現状有姿」で提供され、第三者の知的財産権を侵害していないことの保証を含め、明示的か黙示的かを問わず、いかなる種類の保証も行いません。
+利用者の責任: 利用者が本ソフトウェアのAIコンテンツを再利用、改変、または配布する場合、利用者は自己の責任において関連する法規制およびプラットフォームの規約を遵守するものとします。
