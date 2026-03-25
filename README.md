@@ -49,6 +49,15 @@ uv run python update_assets_readme.py
 
 本プロジェクトで生成された画像の一覧は、[assets/README.md](assets/README.md) で確認できます。
 
+## 生成コストについて
+
+参考情報として、全 366 枚の画像を生成した際にかかった費用を記載します（2026/3/20 時点、税抜）。
+
+- **生成枚数**: 366 枚
+- **使用モデル**: Gemini 3.1 Flash Image (Image Output)
+- **使用量**: 411,040 count
+- **費用**: 3,860 JPY
+
 ## Assets and AI-Generated Content
 
 本リポジトリに含まれる一部の画像アセット（`/assets` ディレクトリ内など）は、Google の Gemini Nano Banana を使用して生成されています。
