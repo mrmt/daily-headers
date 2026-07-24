@@ -43,7 +43,10 @@ APRIL_TASKS = [
 
 def process_task(task):
     date_str, theme, description = task
-    output_path = f"assets/{date_str}.jpg"
+    month, day = date_str.split("-")
+    target_dir = f"assets/{month}"
+    os.makedirs(target_dir, exist_ok=True)
+    output_path = f"{target_dir}/{day}.jpg"
     
     # すでにファイルが存在する場合はスキップ（再実行時の効率化）
     if os.path.exists(output_path):

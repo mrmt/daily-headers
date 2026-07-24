@@ -6,10 +6,16 @@ from generate_daily import generate_daily
 
 load_dotenv()
 
+def _asset_path(date: str) -> str:
+    # MM-DD → assets/MM/DD.jpg
+    month, day = date.split("-")
+    os.makedirs(f"assets/{month}", exist_ok=True)
+    return f"assets/{month}/{day}.jpg"
+
 def process_tasks(tasks, max_workers=4):
     os.makedirs("assets", exist_ok=True)
     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(generate_daily, date, theme, desc, f"assets/{date}.jpg"): date for date, theme, desc in tasks}
+        futures = {executor.submit(generate_daily, date, theme, desc, _asset_path(date)): date for date, theme, desc in tasks}
         for future in concurrent.futures.as_completed(futures):
             date = futures[future]
             try:
@@ -26,7 +32,7 @@ def get_tasks_for_range(month_list):
         for d in range(1, days_in_month[m] + 1):
             date = f"{m:02d}-{d:02d}"
             # すでにファイルが存在するかチェック（以前のセッションで生成済みの場合に備えて）
-            if not os.path.exists(f"assets/{date}.jpg"):
+            if not os.path.exists(_asset_path(date)):
                 all_tasks.append((date, f"Month {m} Day {d}", f"{m}月{d}日のヘッダー画像。季節の移り変わりと風景。"))
         
     return all_tasks

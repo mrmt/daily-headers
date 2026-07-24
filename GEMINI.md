@@ -19,13 +19,13 @@ uv run python generate_daily.py <MM-DD> "<Theme>" "<Description>"
 - **モデル**: `gemini-3.1-flash-image-preview` (Nano Banana 2)
 - **アスペクト比**: 4:1 (15:4 に最適化)
 - **スタイル**: 淡いパステルカラー、ソフトトーン、文字なし
-- **出力**: `/assets/MM-DD.jpg` および `/assets/MM-DD.txt`
+- **出力**: `/assets/MM/DD.jpg` および `/assets/MM/DD.txt` (月ごとにサブディレクトリ分割)
 
 ---
 
 ## 2. アセット一覧の更新 (Update Assets README)
 
-`/assets/` ディレクトリ内の画像と説明文をスキャンし、月ごとに整理された `README.md` を生成・更新します。
+`/assets/` 配下の各月ディレクトリ(`assets/MM/`)を走査し、月別 `README.md` とトップレベル `assets/README.md` を生成・更新します。
 
 ### 実行コマンド
 ```bash
@@ -33,7 +33,7 @@ uv run python update_assets_readme.py
 ```
 
 ### 仕様
-- `/assets/MM-DD.jpg` と `/assets/MM-DD.txt` を紐付け、マークダウン形式のテーブルを出力。
+- `/assets/MM/DD.jpg` と `/assets/MM/DD.txt` を紐付け、マークダウン形式のテーブルを出力。
 - プレビュー画像を表示。
 
 ---

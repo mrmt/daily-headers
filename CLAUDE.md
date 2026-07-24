@@ -28,18 +28,20 @@ uv run python update_assets_readme.py
 
 ## アーキテクチャ
 
-- **generate_daily.py** - 単一日付の画像生成(メインエントリポイント)。`gemini-3.1-flash-image-preview` モデルを使用し、`assets/MM-DD.jpg` と `assets/MM-DD.txt` を出力
+- **generate_daily.py** - 単一日付の画像生成(メインエントリポイント)。`gemini-3.1-flash-image-preview` モデル使用、`assets/MM/DD.jpg` と `assets/MM/DD.txt` を出力
 - **generate_header.py** - カスタムプロンプトによる汎用ヘッダー生成
 - **generate_batch.py** - 日付範囲の一括生成(ThreadPoolExecutor、max_workers=4)
 - **generate_monthly_parallel.py** - 月単位の並列生成(テーマ・説明文をハードコード)
-- **update_assets_readme.py** - `assets/` を走査し、月別 `.md` ファイルとインデックス `README.md` を自動生成
+- **update_assets_readme.py** - `assets/` を走査し、月別 `README.md` とトップレベル `README.md` を自動生成
 
 ## assets/ ディレクトリ
 
-- `MM-DD.jpg` - 生成画像(366ファイル、うるう年対応)
-- `MM-DD.txt` - 画像の日本語説明文
-- `MM.md` - 月別マークダウン(画像プレビュー+説明テーブル)
-- `README.md` - 月別ファイルへのインデックス
+月ごとにサブディレクトリで整理:
+
+- `assets/MM/DD.jpg` - 生成画像(366ファイル、うるう年対応)
+- `assets/MM/DD.txt` - 画像の日本語説明文
+- `assets/MM/README.md` - 月別マークダウン(画像プレビュー+説明テーブル)
+- `assets/README.md` - 月別ディレクトリへのインデックス
 
 ## 画像生成プロンプト仕様
 

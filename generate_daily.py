@@ -75,8 +75,12 @@ def main():
     date_arg = sys.argv[1]
     theme_arg = sys.argv[2]
     desc_arg = sys.argv[3]
-    
-    target_path = f"assets/{date_arg}.jpg"
+
+    # MM-DD → assets/MM/DD.jpg
+    month, day = date_arg.split("-")
+    target_dir = f"assets/{month}"
+    os.makedirs(target_dir, exist_ok=True)
+    target_path = f"{target_dir}/{day}.jpg"
     generate_daily(date_arg, theme_arg, desc_arg, target_path)
 
 if __name__ == "__main__":
