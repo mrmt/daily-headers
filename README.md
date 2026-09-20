@@ -1,57 +1,38 @@
 # Daily Headers
 
-Google DeepMind の Gemini 3.1 Flash Image (Nano Banana 2) を活用して、日替わりのヘッダー画像を自動生成し、アセットとして管理するプロジェクトです。
+日替わりのヘッダー画像(Notion のカバー画像などに使う 15:4 / 約 1500x400px)を 366 日分アセットとして管理するリポジトリです。
 
 ## 概要
 
-本プロジェクトは、特定の日付のテーマに基づき、Notion のカバー画像などに最適なヘッダー画像を生成します。生成された画像は `/assets` ディレクトリに保存され、月ごとに整理された一覧が自動生成されます。
+`assets/MM/DD.jpg` に日付ごとの画像、`assets/MM/DD.txt` にそのテーマを置いています。月ごとの一覧は自動生成されます。
 
-## セットアップ
-
-本プロジェクトでは、Python パッケージマネージャーとして [uv](https://github.com/astral-sh/uv) を使用しています。
-
-1. **環境変数の設定**
-   `.env.example` をコピーして `.env` を作成し、必要な API キーを設定してください。
-   ```bash
-   cp .env.example .env
-   ```
-   `.env` 内に以下の値を設定します：
-   - `VERTEX_API_KEY`: Google AI Studio の API キー
-   - `GOOGLE_CLOUD_PROJECT`: Google Cloud プロジェクト ID
-
-2. **環境の構築**
-   ```bash
-   uv sync
-   ```
+画像生成用のスクリプト群 (Gemini 3.1 Flash Image を使った自動生成) は保守を終了し削除しました。現在は**画像を外部で生成し、このリポジトリには手動で登録する**運用です。
 
 ## 使い方
 
-### 1. 日替わりヘッダーの生成
+### アセットの登録
 
-特定の日付のテーマに基づき、画像（.jpg）と説明文（.txt）を生成します。
+1. 対象日の `assets/MM/DD.jpg` を新しい画像(JPEG)で置き換える
+2. `assets/MM/DD.txt` の内容をその画像のテーマ文字列に置き換える
+3. アセット一覧を再生成する
 
-```bash
-uv run python generate_daily.py <MM-DD> "<Theme>" "<Description>"
-```
-- 例: `uv run python generate_daily.py 04-01 "April Fools Day" "エイプリルフールのためのユニークなヘッダー画像"`
+### アセット一覧 (README) の更新
 
-生成される画像は 4:1 のアスペクト比で、パステルカラーのソフトなトーンに最適化されています。
-
-### 2. アセット一覧 (README) の更新
-
-`/assets` ディレクトリ内の画像と説明文をスキャンし、月ごとに整理された一覧を `/assets/README.md` に生成・更新します。
+`assets/` 配下の画像と説明文をスキャンし、月別 `assets/MM/README.md` とインデックス `assets/README.md` を生成・更新します。
 
 ```bash
-uv run python update_assets_readme.py
+python3 update_assets_readme.py
 ```
+
+標準ライブラリのみを使うため、追加の依存関係や仮想環境は不要です。
 
 ## 生成されたアセットについて
 
-本プロジェクトで生成された画像の一覧は、[assets/README.md](assets/README.md) で確認できます。
+画像の一覧は [assets/README.md](assets/README.md) で確認できます。
 
-## 生成コストについて
+## 生成コストについて (参考記録)
 
-参考情報として、全 366 枚の画像を生成した際にかかった費用を記載します（2026/3/20 時点、税抜）。
+初回に全 366 枚を Gemini で生成した際にかかった費用です(2026/3/20 時点、税抜)。
 
 - **生成枚数**: 366 枚
 - **使用モデル**: Gemini 3.1 Flash Image (Image Output)
@@ -60,7 +41,7 @@ uv run python update_assets_readme.py
 
 ## Assets and AI-Generated Content
 
-本リポジトリに含まれる一部の画像アセット（`/assets` ディレクトリ内など）は、Google の Gemini Nano Banana を使用して生成されています。
+本リポジトリに含まれる一部の画像アセット(`/assets` ディレクトリ内など)は、Google の Gemini Nano Banana を使用して生成されています。
 これらの画像は、プロジェクトの視覚的補助を目的としています。
 
 AI 生成物の著作権および利用条件については、[Google Generative AI Additional Terms of Service](https://ai.google.dev/gemini-api/terms) に準拠します。

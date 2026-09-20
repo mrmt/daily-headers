@@ -1,3 +1,0 @@
-[console_scripts]
-generate-daily = generate_daily:main
-update-assets-readme = update_assets_readme:update_assets_readme
